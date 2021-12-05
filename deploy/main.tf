@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "fanzly"
+    bucket = "appscrip-devops-intern-practice"
 // key specify the path of state maintai
     key = "state/key"
     region = "us-east-2"
