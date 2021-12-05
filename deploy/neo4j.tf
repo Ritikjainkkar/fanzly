@@ -1,3 +1,7 @@
+data "template_file" "neo4j-start" {
+  template = "${file("neo4j-server-setup.sh")}"  
+}
+
 resource "aws_instance" "web" {
   ami           = "ami-00399ec92321828f5"
   instance_type = "t3.small"
@@ -8,7 +12,7 @@ resource "aws_instance" "web" {
   tags = {
     Name = "fanzly-neo4j-server"
   }
-  user_data = data.template_file.neo4j-server.rendered
+  user_data = data.template_file.neo4j-start.rendered
 }
 
 resource "aws_ebs_volume" "example" {
