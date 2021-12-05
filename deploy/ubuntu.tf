@@ -8,3 +8,7 @@ data "aws_ami" "ubuntu" {
 
   owners = ["099720109477"] # Canonical
 }
+
+data "template_file" "neo4j-start" {
+  template = "${file("neo4j-server-setup.sh")}"  
+}

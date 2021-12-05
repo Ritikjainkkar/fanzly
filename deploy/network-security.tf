@@ -52,7 +52,7 @@ resource "aws_security_group" "fanzly-neo4j" {
 }
 
 resource "aws_subnet" "fanzly-subnet-public-1" {
-  vpc_id = aws_vpc.main.id
+  vpc_id = aws_vpc.fanzly.id
   cidr_block = "10.0.2.0/24"
   map_public_ip_on_launch = "true"
   availability_zone = "us-east-2a"
@@ -62,7 +62,7 @@ resource "aws_subnet" "fanzly-subnet-public-1" {
 }
 
 resource "aws_subnet" "fanzly-subnet-private-1" {
-  vpc_id = aws_vpc.main.id
+  vpc_id = aws_vpc.fanzly.id
   cidr_block = "10.0.3.0/24"
   map_public_ip_on_launch = "true"
   availability_zone = "us-east-2a"
