@@ -10,7 +10,7 @@ resource "aws_vpc" "fanzly" {
 }
 
 resource "aws_security_group" "fanzly-web-sg" {
-  name = "network-security-group"
+  name = "fanzly-network-security-group"
   ingress {
     from_port   = 22
     to_port     = 22
@@ -31,7 +31,7 @@ resource "aws_security_group" "fanzly-web-sg" {
 }
 
 resource "aws_security_group" "fanzly-neo4j" {
-  name = "network-security-group"
+  name = "fanzly-neo4j-network-security-group"
   ingress {
     from_port   = 22
     to_port     = 22
